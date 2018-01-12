@@ -2,10 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
     defaultConfig {
-        minSdkVersion 22
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
     }
 
     buildTypes {
@@ -21,12 +24,28 @@ ext.loggerVersion = '2.2.0'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+
     testImplementation 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //Logging
     implementation "com.github.armcha:Logger:${loggerVersion}"
+
+
+    implementation rootProject.ext.dependencies["okhttp3"]
+    implementation(rootProject.ext.dependencies["glide"]) {
+        exclude module: 'support-v4'
+    }
+
+    //rx
+    implementation rootProject.ext.dependencies["rxjava2"]
+    implementation(rootProject.ext.dependencies["rxandroid2"]) {
+        exclude module: 'rxjava'
+    }
+
+
+    implementation rootProject.ext.dependencies["timber"]
 }
 repositories {
     mavenCentral()
