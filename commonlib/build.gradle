@@ -46,6 +46,7 @@ dependencies {
 
 
     implementation rootProject.ext.dependencies["timber"]
+    compile project(path: ':baseMVP')
 }
 repositories {
     mavenCentral()
