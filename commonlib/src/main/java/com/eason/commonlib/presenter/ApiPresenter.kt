@@ -2,17 +2,14 @@ package com.eason.commonlib.presenter
 
 import android.support.annotation.CallSuper
 import com.eason.commonlib.fetcher.Fetcher
-import io.armcha.ribble.domain.fetcher.Fetcher
+import io.armcha.arch.BaseMVPPresenter
 import io.armcha.ribble.domain.fetcher.Status
 import io.armcha.ribble.domain.fetcher.result_listener.RequestType
 import io.armcha.ribble.domain.fetcher.result_listener.ResultListener
-import io.armcha.ribble.presentation.base_mvp.base.BaseContract
-import io.armcha.ribble.presentation.base_mvp.base.BasePresenter
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
-import javax.inject.Inject
 
 /**
  * 封装了各个 Presenter 的请求状态.以及请求类型.默认情况下使用的请求类型是 NONE
@@ -20,7 +17,7 @@ import javax.inject.Inject
  * 这里巧妙的把各个业务的请求(Observerable) 再次封装一层,加入请求类型和请求状态.
  * @author Chatikyan on 04.08.2017.
  */
-abstract class ApiPresenter<VIEW : BaseContract.View> : BasePresenter<VIEW>(), ResultListener {
+abstract class ApiPresenter<VIEW : BaseContract.View> : BaseMVPPresenter<VIEW>(), ResultListener {
 
 
     protected lateinit var fetcher: Fetcher
