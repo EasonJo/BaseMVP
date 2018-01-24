@@ -15,7 +15,6 @@
   */
 package com.eason.http;
 
-import com.jess.arms.di.module.GlobalConfigModule;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;

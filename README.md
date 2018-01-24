@@ -5,7 +5,7 @@ BaseMVP: MVP模式的基本框架,从Ribble开源项目中剥离.使用了 `AAC(
 常用的一些 Code 模板以及工具类.
 ### adapter
 * 针对 RecycleView.Adapter 的通用封装.
-* 使用 Difftil 来处理数据,提高刷新效率.
+* 使用 DiffUtil 来处理数据,提高刷新效率.
 ### extensions
 Kotlin 中一些工具类性质的扩展函数.
 

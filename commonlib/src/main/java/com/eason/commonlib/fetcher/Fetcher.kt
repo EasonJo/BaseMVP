@@ -1,7 +1,5 @@
 package com.eason.commonlib.fetcher
 
-import io.armcha.ribble.domain.fetcher.Status
-import io.armcha.ribble.domain.fetcher.result_listener.RequestType
 import io.armcha.ribble.domain.fetcher.result_listener.ResultListener
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -11,11 +9,14 @@ import java.util.concurrent.ConcurrentHashMap
 
 /**
  * Rxjava 的具体操作类,其中用 Map 记录了某种类型的上一次请求结果,所有的被观察者都在 IO 线程运行,结果则反馈给主线程执行.
- * @author Created by Chatikyan on 04.08.2017.
  */
+class Fetcher private constructor() {
 
-class Fetcher constructor(private val disposable: CompositeDisposable) {
+    companion object {
+        val INSTANCE: Fetcher by lazy { Fetcher() }
+    }
 
+    private val disposable = CompositeDisposable()
     private val requestMap = ConcurrentHashMap<RequestType, Status>()
 
     private fun <T> getIOToMainTransformer(): SingleTransformer<T, T> {

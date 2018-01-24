@@ -1,5 +1,7 @@
 package io.armcha.ribble.domain.fetcher.result_listener
 
+import com.eason.commonlib.fetcher.RequestType
+
 /**
  * Created by Chatikyan on 04.08.2017.
  */

@@ -1,7 +1,7 @@
-package io.armcha.ribble.domain.fetcher.result_listener
+package com.eason.commonlib.fetcher
 
 /**
- * Created by Chatikyan on 23.09.2017.
+ * 标示当前请求的类型.以便于记录不同的请求类型的状态.
  */
 enum class RequestType {
 

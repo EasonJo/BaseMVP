@@ -1,10 +1,11 @@
-package io.armcha.ribble.domain.fetcher
+package com.eason.commonlib.fetcher
 
 /**
- * Created by Chatikyan on 18.09.2017.
+ * 密封类
+ * [https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/mi_feng_lei.html]
+ * @author Eason
  */
 sealed class Status {
-
     object LOADING : Status()
     object ERROR : Status()
     object SUCCESS : Status()

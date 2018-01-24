@@ -3,8 +3,8 @@ package com.eason.commonlib.presenter
 import android.support.annotation.CallSuper
 import com.eason.commonlib.fetcher.Fetcher
 import io.armcha.arch.BaseMVPPresenter
-import io.armcha.ribble.domain.fetcher.Status
-import io.armcha.ribble.domain.fetcher.result_listener.RequestType
+import com.eason.commonlib.fetcher.Status
+import com.eason.commonlib.fetcher.RequestType
 import io.armcha.ribble.domain.fetcher.result_listener.ResultListener
 import io.reactivex.Completable
 import io.reactivex.Flowable
